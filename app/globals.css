@@ -155,6 +155,14 @@ html, body {
     opacity: 0;
     animation: fadeUp 1s ease 1.6s forwards;
 }
+.privacy-note a {
+    color: var(--piet-gray);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.privacy-note a:hover {
+    color: var(--text-body);
+}
 
 .color-dots {
     display: flex;
@@ -183,6 +191,68 @@ html, body {
     opacity: 0;
     animation: fadeUp 1s ease 1.9s forwards;
     z-index: 1;
+}
+
+/* Legal pages */
+.legal-page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+    color: var(--text-body);
+    overflow-y: auto;
+    height: 100vh;
+}
+.legal-page h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--piet-gray);
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+}
+.legal-page h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--piet-gray);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+.legal-page p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+}
+.legal-page ul {
+    margin: 0.5rem 0 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+.legal-page a {
+    color: var(--piet-gray);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.legal-page a:hover {
+    color: var(--text-body);
+}
+.back-link {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--piet-light) !important;
+    text-decoration: none !important;
+    margin-bottom: 2rem;
+}
+.back-link:hover {
+    color: var(--piet-gray) !important;
+}
+.legal-date {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--piet-light);
 }
 
 @keyframes fadeUp {

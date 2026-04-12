@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import PietBackground from "./PietBackground";
 import PietLogo from "./PietLogo";
 
@@ -52,7 +53,8 @@ export default function Home() {
         </form>
 
         <p className="privacy-note">
-          Wir nutzen deine E-Mail nur, um dich über den Launch zu informieren. Kein Spam, keine Weitergabe an Dritte. Du kannst dich jederzeit abmelden.
+          Mit dem Absenden stimmst du unserer{" "}
+          <Link href="/datenschutz">Datenschutzerklärung</Link> zu.
         </p>
 
         <div className="color-dots">
