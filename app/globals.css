@@ -265,7 +265,7 @@ html, body {
     .headline { font-size: 1.6rem; }
     .subtext { font-size: 0.9rem; }
     .notify-form { flex-direction: column; gap: 0.5rem; }
-    .notify-form input { border-right: 1.5px solid var(--bg-alt); border-radius: 4px; }
+    .notify-form input { border-right: 1.5px solid var(--bg-alt); border-radius: 4px; font-size: 16px; }
     .notify-form button { border-radius: 4px; }
     .logo-mark { width: 70px; }
 }
