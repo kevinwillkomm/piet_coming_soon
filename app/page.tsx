@@ -1,66 +1,70 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { FormEvent, useState } from "react";
+import PietBackground from "./PietBackground";
+import PietLogo from "./PietLogo";
 
 export default function Home() {
+  const [submitted, setSubmitted] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
+  function handleEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value;
+    setEmailValid(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value));
+  }
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <PietBackground />
+
+      <div className="overlay">
+        <PietLogo />
+
+        <h1 className="wordmark">Piet</h1>
+        <p className="tagline">Designed with care</p>
+
+        <hr className="divider" />
+
+        <h2 className="headline">
+          Etwas <strong>Schönes</strong> entsteht.
+        </h2>
+        <p className="subtext">
+          Ästhetisches Desk-Zubehör, das sich gut anfühlt. Sanfte Farben.
+          Saubere Formen. Bald hier.
+        </p>
+
+        <form className="notify-form" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Deine E-Mail für Updates"
+            required
+            disabled={submitted}
+            onChange={handleEmailChange}
+          />
+          <button type="submit" className={emailValid ? "valid" : ""}>
+            {submitted ? "Gespeichert" : "Erinnern"}
+          </button>
+        </form>
+
+        <p className="privacy-note">
+          Wir nutzen deine E-Mail nur, um dich über den Launch zu informieren. Kein Spam, keine Weitergabe an Dritte. Du kannst dich jederzeit abmelden.
+        </p>
+
+        <div className="color-dots">
+          <span style={{ background: "#deedfc" }} />
+          <span style={{ background: "#f7dce5" }} />
+          <span style={{ background: "#c8ebcd" }} />
+          <span style={{ background: "#dfdee5" }} />
+          <span style={{ background: "#fbebb5" }} />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+
+      <p className="footer">Coming Soon</p>
+    </>
   );
 }
