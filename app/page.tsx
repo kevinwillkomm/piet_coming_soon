@@ -58,11 +58,12 @@ export default function Home() {
         </p>
 
         <div className="color-dots">
-          <span style={{ background: "#deedfc" }} />
-          <span style={{ background: "#f7dce5" }} />
-          <span style={{ background: "#c8ebcd" }} />
-          <span style={{ background: "#dfdee5" }} />
-          <span style={{ background: "#fbebb5" }} />
+          <span style={{ background: "#EFD8BE" }} />
+          <span style={{ background: "#B4F5FE" }} />
+          <span style={{ background: "#B091EF" }} />
+          <span style={{ background: "#98FF98" }} />
+          <span style={{ background: "#FFC2F4" }} />
+          <span style={{ background: "#F9E069" }} />
         </div>
       </div>
 
